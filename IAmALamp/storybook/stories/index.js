@@ -1,8 +1,10 @@
 import React from 'react';
 
-import {storiesOf} from '@storybook/react-native';
+import { storiesOf } from '@storybook/react-native';
 
-import Button from '../../src/components/Button';
+import PrimaryButton from '../../src/components/PrimaryButton';
+import SecondaryButton from '../../src/components/SecondaryButton';
 
-storiesOf('Button', module)
-  .add('button', () => <Button />);
+storiesOf('PrimaryButton', module)
+  .add('primaryButton', () => <PrimaryButton label="Label" />)
+  .add('secondaryButton', () => <SecondaryButton label="Label" />);

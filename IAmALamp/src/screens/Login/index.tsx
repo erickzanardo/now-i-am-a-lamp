@@ -1,6 +1,6 @@
-import React from "react";
-import { View } from "react-native";
-import Button from "../../components/Button";
+import React from 'react';
+import { View } from 'react-native';
+import Button from '../../components/PrimaryButton';
 
 interface Props {
   onLogin: () => void;
