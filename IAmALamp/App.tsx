@@ -9,15 +9,15 @@
  */
 
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import { Provider } from "react-redux";
 import { store } from "./src/store";
 import { NavigationContainer } from "@react-navigation/native";
 import "react-native-gesture-handler";
 
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "src/screens/Home";
-import Login from "src/screens/Login";
+import Home from "./src/screens/Home";
+import Login from "./src/screens/Login";
 declare const global: { HermesInternal: null | {} };
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator>
