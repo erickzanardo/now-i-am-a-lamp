@@ -6,7 +6,7 @@ import PrimaryButton from '../../src/components/PrimaryButton';
 import SecondaryButton from '../../src/components/SecondaryButton';
 
 import InputText from '../../src/components/InputText';
-import {MailIcon} from '../../src/components/Icon';
+import { MailIcon } from '../../src/components/Icon';
 
 storiesOf('PrimaryButton', module)
   .add('primaryButton', () => <PrimaryButton label="Label" />)
