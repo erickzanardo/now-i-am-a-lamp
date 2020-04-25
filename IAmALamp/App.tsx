@@ -8,16 +8,16 @@
  * @format
  */
 
-import React, { useState } from "react";
-import { SafeAreaView, View } from "react-native";
-import { Provider } from "react-redux";
-import { store } from "./src/store";
-import { NavigationContainer } from "@react-navigation/native";
-import "react-native-gesture-handler";
+import React, { useState } from 'react';
+import { SafeAreaView, View } from 'react-native';
+import { Provider } from 'react-redux';
+import { store } from './src/store';
+import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
 
-import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./src/screens/Home";
-import Login from "./src/screens/Login";
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './src/screens/Home';
+import Login from './src/screens/Login';
 declare const global: { HermesInternal: null | {} };
 
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
               </>
             ) : (
               <Stack.Screen name="Login">
-                {props => (
+                {(props) => (
                   <Login {...props} onLogin={() => setLoggedIn(true)} />
                 )}
               </Stack.Screen>
