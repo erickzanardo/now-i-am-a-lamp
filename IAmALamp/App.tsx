@@ -8,20 +8,41 @@
  * @format
  */
 
-import React from "react";
-import { SafeAreaView, Text, View, Image } from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView } from "react-native";
 import { Provider } from "react-redux";
 import { store } from "./src/store";
+import { NavigationContainer } from "@react-navigation/native";
+import "react-native-gesture-handler";
 
+import { createStackNavigator } from "@react-navigation/stack";
+import Home from "src/screens/Home";
+import Login from "src/screens/Login";
 declare const global: { HermesInternal: null | {} };
 
 const App = () => {
+  const Stack = createStackNavigator();
+
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
   return (
     <SafeAreaView>
       <Provider store={store}>
-        <View style={{ flex: 1, alignItems: "center" }}>
-          <Text>Agora eu sou um abajur, Yayyyyyyyyy!!!</Text>
-        </View>
+        <NavigationContainer>
+          <Stack.Navigator>
+            {isLoggedIn ? (
+              <>
+                <Stack.Screen name="Home" component={Home} />
+              </>
+            ) : (
+              <Stack.Screen name="Login">
+                {props => (
+                  <Login {...props} onLogin={() => setLoggedIn(true)} />
+                )}
+              </Stack.Screen>
+            )}
+          </Stack.Navigator>
+        </NavigationContainer>
       </Provider>
     </SafeAreaView>
   );
