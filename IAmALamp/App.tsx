@@ -8,20 +8,21 @@
  * @format
  */
 
-import React from 'react';
-import {SafeAreaView, Text, View, Image} from 'react-native';
+import React from "react";
+import { SafeAreaView, Text, View, Image } from "react-native";
+import { Provider } from "react-redux";
+import { store } from "./src/store";
 
-import lamp from './lamp.png';
-
-declare const global: {HermesInternal: null | {}};
+declare const global: { HermesInternal: null | {} };
 
 const App = () => {
   return (
     <SafeAreaView>
-      <View style={{flex: 1, alignItems: 'center'}}>
-        <Text>Agora eu sou um abajur, Yayyyyyyyyy!!!</Text>
-        <Image source={lamp} />
-      </View>
+      <Provider store={store}>
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <Text>Agora eu sou um abajur, Yayyyyyyyyy!!!</Text>
+        </View>
+      </Provider>
     </SafeAreaView>
   );
 };
