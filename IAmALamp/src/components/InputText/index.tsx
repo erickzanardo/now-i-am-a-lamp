@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {TextInput, View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { TextInput, View, Text } from 'react-native';
 
 import styles from './style';
 import theme from '../theme';
@@ -12,16 +12,22 @@ interface Props {
   icon?: Component;
 }
 
-export default ({value, onChangeText, placeholder, label, icon}: Props) => (
-  <View>
+export default ({ value, onChangeText, placeholder, label, icon }: Props) => (
+  <View style={styles.container}>
     {label && <Text style={styles.label}>{label}</Text>}
-    {icon}
-    <TextInput
-      style={styles.input}
-      value={value}
-      onChangeText={(text) => onChangeText(text)}
-      placeholder={placeholder}
-      placeholderTextColor={theme.colors.gray}
-    />
+    <View style={styles.wrapper}>
+      {icon && (
+        <View style={styles.iconWrapper}>
+          {icon}
+        </View>
+      )}
+      <TextInput
+        style={styles.input}
+        value={value}
+        onChangeText={(text) => onChangeText(text)}
+        placeholder={placeholder}
+        placeholderTextColor={theme.colors.gray}
+      />
+    </View>
   </View>
 );
