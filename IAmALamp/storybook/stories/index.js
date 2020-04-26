@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import PrimaryButton from '../../src/components/PrimaryButton';
 import SecondaryButton from '../../src/components/SecondaryButton';
+import Avatar from '../../src/components/Avatar';
 
 import InputText from '../../src/components/InputText';
 import { MailIcon, HeartIcon } from '../../src/components/Icon';
@@ -37,3 +38,18 @@ storiesOf('InputText', module)
       onChangeText={(text) => console.log(text)}
     />
   ));
+
+storiesOf('Avatar', module)
+  .add('primary avatar', () => (
+    <Avatar
+      image="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+      size={120}
+      primary={true}
+    />
+  ))
+  .add('secondary avatar', () => (
+    <Avatar
+      image="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+      size={120}
+    />
+  ))
