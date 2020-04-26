@@ -6,11 +6,14 @@ import PrimaryButton from '../../src/components/PrimaryButton';
 import SecondaryButton from '../../src/components/SecondaryButton';
 
 import InputText from '../../src/components/InputText';
-import { MailIcon } from '../../src/components/Icon';
+import { MailIcon, HeartIcon } from '../../src/components/Icon';
 
-storiesOf('PrimaryButton', module)
-  .add('primaryButton', () => <PrimaryButton label="Label" />)
-  .add('secondaryButton', () => <SecondaryButton label="Label" />);
+storiesOf('Button', module)
+  .add('primary button', () => <PrimaryButton label="Label" />)
+  .add('secondary button', () => <SecondaryButton label="Label" />)
+  .add('heart icon button', () => (
+    <PrimaryButton label="Label" icon={<HeartIcon />} />
+  ));
 
 storiesOf('InputText', module)
   .add('default', () => (

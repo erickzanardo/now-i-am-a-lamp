@@ -7,6 +7,7 @@ export default StyleSheet.create({
     borderRadius: 12,
     height: 50,
     display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -15,5 +16,8 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     fontFamily: 'Roboto-Bold',
+  },
+  iconContainer: {
+    paddingRight: 15,
   },
 });
