@@ -5,13 +5,13 @@ import { storiesOf } from '@storybook/react-native';
 import PrimaryButton from '../../src/components/PrimaryButton';
 import SecondaryButton from '../../src/components/SecondaryButton';
 import Avatar from '../../src/components/Avatar';
+import Link from '../../src/components/Link';
 
 import InputText from '../../src/components/InputText';
 import { MailIcon, HeartIcon } from '../../src/components/Icon';
 
 import BackgroundView from '../../src/components/BackgroundView';
 import Navbar from '../../src/components/Navbar';
-import Link from '../../src/components/Link';
 
 storiesOf('Button', module)
   .add('primary button', () => <PrimaryButton label="Label" />)
