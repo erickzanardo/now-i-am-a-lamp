@@ -19,11 +19,14 @@ const Login = ({ onLogin }: Props) => {
         <Image source={lampLogo} />
         <View style={styles.inputs}>
           <InputText
+            label="Email"
             onChangeText={() => {}}
             placeholder="example@email.com"
             icon={<MailIcon />}
           />
+          <View style={styles.spacer} />
           <InputText
+            label="Password"
             onChangeText={() => {}}
             placeholder="Your Password Here"
             icon={<PasswordIcon />}

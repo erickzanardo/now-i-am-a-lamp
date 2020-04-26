@@ -23,4 +23,7 @@ export default StyleSheet.create({
   inputs: {
     marginTop: 25,
   },
+  spacer: {
+    height: 20,
+  },
 });

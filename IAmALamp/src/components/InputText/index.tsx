@@ -14,7 +14,7 @@ interface Props {
 
 export default ({ value, onChangeText, placeholder, label, icon }: Props) => (
   <View style={styles.container}>
-    {label && <Text style={styles.label}>{label}</Text>}
+    <Text style={styles.label}>{label}</Text>
     <View style={styles.wrapper}>
       {icon}
       <TextInput
