@@ -16,7 +16,7 @@ export default ({ value, onChangeText, placeholder, label, icon }: Props) => (
   <View style={styles.container}>
     {label && <Text style={styles.label}>{label}</Text>}
     <View style={styles.wrapper}>
-      {icon && <View style={styles.iconWrapper}>{icon}</View>}
+      {icon}
       <TextInput
         style={styles.input}
         value={value}
