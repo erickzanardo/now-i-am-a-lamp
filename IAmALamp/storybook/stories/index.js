@@ -62,7 +62,9 @@ storiesOf('BackgroundView', module).add('background view layout', () => (
   <BackgroundView />
 ));
 
-storiesOf('Navbar', module).add('navbar', () => <Navbar onPress={() => {}} />);
+storiesOf('Navbar', module).add('navbar', () => (
+  <Navbar onBackPress={() => {}} />
+));
 
 storiesOf('Link', module).add('link', () => (
   <Link onPress={() => {}}>

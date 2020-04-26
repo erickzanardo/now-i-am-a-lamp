@@ -7,12 +7,12 @@ import { BackIcon } from '../Icon';
 import styles from './styles';
 
 interface Props {
-  onPress: () => void;
+  onBackPress: () => void;
 }
-const Navbar = ({ onPress }: Props) => {
+const Navbar = ({ onBackPress }: Props) => {
   return (
     <View style={styles.navbar}>
-      <Link onPress={onPress}>
+      <Link onPress={onBackPress}>
         <BackIcon />
       </Link>
     </View>
