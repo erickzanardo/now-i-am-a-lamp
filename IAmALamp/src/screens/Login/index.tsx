@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Image, Text } from 'react-native';
+import { useDispatch } from 'react-redux';
 
 import Button from '../../components/PrimaryButton';
 import BackgroundView from '../../components/BackgroundView';
@@ -12,10 +13,11 @@ import lampLogo from '../../../assets/images/lamp-logo.png';
 import { NavigationProp } from '@react-navigation/native';
 
 interface Props {
-  onLogin: () => void;
   navigation: NavigationProp<any>;
 }
-const Login = ({ onLogin, navigation }: Props) => {
+const Login = ({ navigation }: Props) => {
+  const dispatch = useDispatch();
+
   return (
     <BackgroundView customStyle={styles.bodyWrapper}>
       <View style={styles.body}>
@@ -36,7 +38,17 @@ const Login = ({ onLogin, navigation }: Props) => {
           />
         </View>
         <View style={styles.loginButton}>
-          <Button onPress={onLogin} label="Login" width={300} />
+          <Button
+            onPress={() => {
+              // TODO this should be somehwere else when we integrate everything
+              dispatch({
+                type: 'USER_LOGGED_IN',
+                payload: { userEmail: 'jacksparrow@pirate.com' },
+              });
+            }}
+            label="Login"
+            width={300}
+          />
           <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
         </View>
       </View>
