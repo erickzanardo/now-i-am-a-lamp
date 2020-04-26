@@ -12,7 +12,6 @@ import { MailIcon, HeartIcon } from '../../src/components/Icon';
 
 import BackgroundView from '../../src/components/BackgroundView';
 import Navbar from '../../src/components/Navbar';
-import Link from '../../src/components/Link';
 
 storiesOf('Button', module)
   .add('primary button', () => <PrimaryButton label="Label" />)
