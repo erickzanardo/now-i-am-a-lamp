@@ -1,17 +1,18 @@
 import React from 'react';
 
-import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
+import Button from '../Button';
 
 interface Props {
   onPress: () => void;
   label: string;
+  width?: number;
 }
 
-export default ({ onPress, label }: Props) => (
-  <TouchableOpacity onPress={onPress}>
-    <View style={styles.button}>
-      <Text style={styles.label}>{label?.toUpperCase()}</Text>
-    </View>
-  </TouchableOpacity>
+export default (props: Props) => (
+  <Button
+    {...props}
+    customStyleButton={styles.button}
+    customStyleLabel={styles.label}
+  />
 );

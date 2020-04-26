@@ -6,6 +6,7 @@ export default StyleSheet.create({
     fontFamily: 'Roboto',
     fontSize: 16,
     width: '100%',
+    marginLeft: 15,
   },
   label: {
     fontFamily: 'Roboto',
@@ -27,5 +28,6 @@ export default StyleSheet.create({
     height: 60,
     flex: 1,
     flexDirection: 'row',
+    alignItems: 'center',
   },
 });
