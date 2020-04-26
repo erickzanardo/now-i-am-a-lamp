@@ -34,9 +34,13 @@ const Login = ({ onLogin }: Props) => {
         </View>
         <View style={styles.loginButton}>
           <Button onPress={onLogin} label="Login" width={300} />
+          <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
         </View>
       </View>
-      <Text style={styles.signUpText}>Don’t have an account? Sign up</Text>
+      <View style={styles.signUpContainer}>
+        <Text style={styles.signUpText}>Don’t have an account?</Text>
+        <Text style={[styles.signUpText, styles.signUpLink]}>Sign up</Text>
+      </View>
     </BackgroundView>
   );
 };
