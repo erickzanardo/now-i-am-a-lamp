@@ -8,6 +8,8 @@ import SecondaryButton from '../../src/components/SecondaryButton';
 import InputText from '../../src/components/InputText';
 import { MailIcon, HeartIcon } from '../../src/components/Icon';
 
+import BackgroundView from '../../src/components/BackgroundView';
+
 storiesOf('Button', module)
   .add('primary button', () => <PrimaryButton label="Label" />)
   .add('secondary button', () => <SecondaryButton label="Label" />)
@@ -37,3 +39,7 @@ storiesOf('InputText', module)
       onChangeText={(text) => console.log(text)}
     />
   ));
+
+storiesOf('BackgroundView', module).add('background view layout', () => (
+  <BackgroundView />
+));
