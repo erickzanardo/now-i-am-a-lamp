@@ -7,12 +7,20 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home';
 import Login from './Login';
 import Register from './Register';
+import Selection from './Selection';
 import Navbar from '../components/Navbar';
+
+interface Props {
+  loggedUser?: string;
+  thing?: string;
+}
 
 export default () => {
   const Stack = createStackNavigator();
 
-  const loggedUser = useSelector<RootState>(({ user }) => user.loggedUser);
+  const { loggedUser, thing } = useSelector<RootState, Props>(
+    ({ user }) => user,
+  );
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -26,7 +34,17 @@ export default () => {
         }}>
         {loggedUser ? (
           <>
-            <Stack.Screen name="Home" component={Home} />
+            {thing ? (
+              <>
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Selection" component={Selection} />
+              </>
+            ) : (
+              <>
+                <Stack.Screen name="Selection" component={Selection} />
+                <Stack.Screen name="Home" component={Home} />
+              </>
+            )}
           </>
         ) : (
           <>
