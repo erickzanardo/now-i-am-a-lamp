@@ -1,4 +1,5 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import SplashScreen from 'react-native-splash-screen';
 
 import Storybook from './storybook';
 import App from './App';
@@ -11,6 +12,8 @@ const Root = () => {
   );
 
   useEffect(() => {
+    SplashScreen.hide();
+
     if (__DEV__) {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       const DevMenu = require('react-native-dev-menu');
