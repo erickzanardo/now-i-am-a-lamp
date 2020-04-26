@@ -23,7 +23,7 @@ const Register = () => {
         <InputText
           label="Username"
           onChangeText={() => {}}
-          placeholder="You Username Here"
+          placeholder="Your Username Here"
           icon={<UserIcon />}
         />
         <View style={styles.spacer} />
