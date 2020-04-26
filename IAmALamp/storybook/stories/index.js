@@ -10,6 +10,7 @@ import InputText from '../../src/components/InputText';
 import { MailIcon, HeartIcon } from '../../src/components/Icon';
 
 import BackgroundView from '../../src/components/BackgroundView';
+import Navbar from '../../src/components/Navbar';
 
 storiesOf('Button', module)
   .add('primary button', () => <PrimaryButton label="Label" />)
@@ -59,3 +60,5 @@ storiesOf('Avatar', module)
 storiesOf('BackgroundView', module).add('background view layout', () => (
   <BackgroundView />
 ));
+
+storiesOf('Navbar', module).add('navbar', () => <Navbar onPress={() => {}} />);
