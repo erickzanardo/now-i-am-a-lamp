@@ -60,7 +60,7 @@
 		031F3A6907F4B8FE08E5AABA /* Pods-IAmALamp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAmALamp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IAmALamp-tvOSTests/Pods-IAmALamp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0BD56816193C45238E226772 /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		0D3F3CA9B3D49F8EC5F5D6E1 /* Pods-IAmALamp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAmALamp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-IAmALamp-tvOS/Pods-IAmALamp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* IAmALamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IAmALamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* I am a Lamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I am a Lamp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IAmALamp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = IAmALamp/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* IAmALamp.app */,
+				13B07F961A680F5B00A75B9A /* I am a Lamp.app */,
 				00E356EE1AD99517003FC87E /* IAmALampTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* IAmALamp-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* IAmALamp-tvOSTests.xctest */,
@@ -283,7 +283,7 @@
 			);
 			name = IAmALamp;
 			productName = IAmALamp;
-			productReference = 13B07F961A680F5B00A75B9A /* IAmALamp.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* I am a Lamp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* IAmALamp-tvOS */ = {
@@ -702,7 +702,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = IAmALamp;
+				PRODUCT_NAME = "I am a Lamp";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -724,7 +724,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = IAmALamp;
+				PRODUCT_NAME = "I am a Lamp";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
