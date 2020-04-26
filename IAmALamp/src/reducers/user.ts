@@ -2,6 +2,7 @@ import { Reducer } from 'redux';
 
 export interface UserState {
   loggedUser?: string;
+  thing?: string;
 }
 
 const initialState: UserState = {};
