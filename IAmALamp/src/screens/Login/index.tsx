@@ -5,14 +5,17 @@ import Button from '../../components/PrimaryButton';
 import BackgroundView from '../../components/BackgroundView';
 import InputText from '../../components/InputText';
 import { MailIcon, PasswordIcon } from '../../components/Icon';
+import Link from '../../components/Link';
 
 import styles from './styles';
 import lampLogo from '../../../assets/images/lamp-logo.png';
+import { NavigationProp } from '@react-navigation/native';
 
 interface Props {
   onLogin: () => void;
+  navigation: NavigationProp<any>;
 }
-const Login = ({ onLogin }: Props) => {
+const Login = ({ onLogin, navigation }: Props) => {
   return (
     <BackgroundView customStyle={styles.bodyWrapper}>
       <View style={styles.body}>
@@ -39,7 +42,9 @@ const Login = ({ onLogin }: Props) => {
       </View>
       <View style={styles.signUpContainer}>
         <Text style={styles.signUpText}>Don’t have an account?</Text>
-        <Text style={[styles.signUpText, styles.signUpLink]}>Sign up</Text>
+        <Link onPress={() => navigation.navigate('Register')}>
+          <Text style={[styles.signUpText, styles.signUpLink]}>Sign up</Text>
+        </Link>
       </View>
     </BackgroundView>
   );

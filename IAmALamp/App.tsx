@@ -18,6 +18,7 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
+import Register from './src/screens/Register';
 declare const global: { HermesInternal: null | {} };
 
 const App = () => {
@@ -35,11 +36,14 @@ const App = () => {
                 <Stack.Screen name="Home" component={Home} />
               </>
             ) : (
-              <Stack.Screen name="Login">
-                {(props) => (
-                  <Login {...props} onLogin={() => setLoggedIn(true)} />
-                )}
-              </Stack.Screen>
+              <>
+                <Stack.Screen name="Login">
+                  {(props) => (
+                    <Login {...props} onLogin={() => setLoggedIn(true)} />
+                  )}
+                </Stack.Screen>
+                <Stack.Screen name="Register" component={Register} />
+              </>
             )}
           </Stack.Navigator>
         </NavigationContainer>

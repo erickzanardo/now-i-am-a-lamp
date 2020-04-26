@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react-native';
 import PrimaryButton from '../../src/components/PrimaryButton';
 import SecondaryButton from '../../src/components/SecondaryButton';
 import Avatar from '../../src/components/Avatar';
+import Link from '../../src/components/Link';
 
 import InputText from '../../src/components/InputText';
 import { MailIcon, HeartIcon } from '../../src/components/Icon';
