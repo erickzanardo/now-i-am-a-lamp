@@ -41,6 +41,7 @@ storiesOf('InputText', module)
     />
   ));
 
+<<<<<<< HEAD
 storiesOf('Avatar', module)
   .add('primary avatar', () => (
     <Avatar
@@ -56,6 +57,8 @@ storiesOf('Avatar', module)
     />
   ));
 
+=======
+>>>>>>> 753a3695480b092033868de14df0647033c8d15d
 storiesOf('BackgroundView', module).add('background view layout', () => (
   <BackgroundView />
 ));
