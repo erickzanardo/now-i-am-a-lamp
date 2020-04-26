@@ -49,7 +49,9 @@ const Login = ({ navigation }: Props) => {
             label="Login"
             width={300}
           />
-          <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
+          <Link onPress={() => navigation.navigate('ForgotPassword')}>
+            <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
+          </Link>
         </View>
       </View>
       <View style={styles.signUpContainer}>

@@ -9,6 +9,7 @@ import Login from './Login';
 import Register from './Register';
 import Selection from './Selection';
 import Navbar from '../components/Navbar';
+import ForgotPassword from './ForgotPassword';
 
 interface Props {
   loggedUser?: string;
@@ -52,6 +53,11 @@ export default () => {
             <Stack.Screen
               name="Register"
               component={Register}
+              options={{ headerShown: true }}
+            />
+            <Stack.Screen
+              name="ForgotPassword"
+              component={ForgotPassword}
               options={{ headerShown: true }}
             />
           </>
