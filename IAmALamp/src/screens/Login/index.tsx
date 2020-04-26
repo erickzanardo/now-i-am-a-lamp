@@ -1,15 +1,40 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image, Text } from 'react-native';
+
 import Button from '../../components/PrimaryButton';
+import BackgroundView from '../../components/BackgroundView';
+import InputText from '../../components/InputText';
+import { MailIcon, PasswordIcon } from '../../components/Icon';
+
+import styles from './styles';
+import lampLogo from '../../../assets/images/lamp-logo.png';
 
 interface Props {
   onLogin: () => void;
 }
 const Login = ({ onLogin }: Props) => {
   return (
-    <View>
-      <Button onPress={onLogin} label="Vai" />
-    </View>
+    <BackgroundView customStyle={styles.bodyWrapper}>
+      <View style={styles.body}>
+        <Image source={lampLogo} />
+        <View style={styles.inputs}>
+          <InputText
+            onChangeText={() => {}}
+            placeholder="example@email.com"
+            icon={<MailIcon />}
+          />
+          <InputText
+            onChangeText={() => {}}
+            placeholder="Your Password Here"
+            icon={<PasswordIcon />}
+          />
+        </View>
+        <View style={styles.loginButton}>
+          <Button onPress={onLogin} label="Login" width={300} />
+        </View>
+      </View>
+      <Text style={styles.signUpText}>Don’t have an account? Sign up</Text>
+    </BackgroundView>
   );
 };
 

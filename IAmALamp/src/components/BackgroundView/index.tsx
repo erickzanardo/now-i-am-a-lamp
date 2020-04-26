@@ -1,9 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 import styles from './styles';
 
-const BackgroundView = () => {
-  return <View style={styles.view}></View>;
+interface Props {
+  children?: Element;
+  customStyle?: ViewStyle;
+}
+const BackgroundView = ({ children, customStyle }: Props) => {
+  return <View style={[styles.view, customStyle]}>{children}</View>;
 };
 
 export default BackgroundView;

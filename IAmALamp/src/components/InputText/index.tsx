@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 
 import styles from './style';
@@ -9,18 +9,14 @@ interface Props {
   onChangeText: (text: string) => void;
   placeholder: string;
   label?: string;
-  icon?: Component;
+  icon?: Element;
 }
 
 export default ({ value, onChangeText, placeholder, label, icon }: Props) => (
   <View style={styles.container}>
     {label && <Text style={styles.label}>{label}</Text>}
     <View style={styles.wrapper}>
-      {icon && (
-        <View style={styles.iconWrapper}>
-          {icon}
-        </View>
-      )}
+      {icon && <View style={styles.iconWrapper}>{icon}</View>}
       <TextInput
         style={styles.input}
         value={value}
