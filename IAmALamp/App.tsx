@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import { store } from './src/store';
 import 'react-native-gesture-handler';
@@ -20,11 +20,11 @@ declare const global: { HermesInternal: null | {} };
 
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <Provider store={store}>
         <Navigator />
       </Provider>
-    </SafeAreaView>
+    </View>
   );
 };
 
