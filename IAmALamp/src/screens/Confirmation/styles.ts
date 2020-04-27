@@ -7,12 +7,13 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   objectImage: {
-    alignItems: 'center',
+    alignItems: 'flex-end',
     marginTop: 20,
     borderRadius: 30,
     backgroundColor: '#ff0000',
     height: 196,
     width: 244,
+    justifyContent: 'flex-end',
   },
   body: {
     alignItems: 'center',
@@ -61,5 +62,9 @@ export default StyleSheet.create({
   },
   lifeText: {
     marginTop: 38,
+  },
+  refreshImage: {
+    right: -25,
+    bottom: -20,
   },
 });
