@@ -1,14 +1,23 @@
-import { Reducer } from "redux";
+import { Reducer } from 'redux';
 
 export interface UserState {
   loggedUser?: string;
+  thing?: string;
 }
 
 const initialState: UserState = {};
 
 export const UserReducer: Reducer<UserState> = (
   state = initialState,
-  action
+  action,
 ) => {
+  if (action.type === 'USER_LOGGED_IN') {
+    const { userEmail } = action.payload;
+
+    return {
+      ...state,
+      loggedUser: userEmail,
+    };
+  }
   return state;
 };

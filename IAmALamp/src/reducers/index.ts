@@ -1,7 +1,7 @@
-import { UserReducer, UserState } from "./user";
-import { combineReducers } from "redux";
+import { UserReducer, UserState } from './user';
+import { combineReducers } from 'redux';
 
-interface RootState {
+export interface RootState {
   user: UserState;
 }
 
