@@ -6,7 +6,7 @@ import Button from '../Button';
 interface Props {
   onPress: () => void;
   label: string;
-  icon?: React.Component;
+  icon?: Element;
   width?: number;
 }
 

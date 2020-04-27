@@ -11,6 +11,7 @@ import Selection from './Selection';
 import Navbar from '../components/Navbar';
 import ForgotPassword from './ForgotPassword';
 import Loading from './Loading';
+import Confirmation from './Confirmation';
 
 interface Props {
   loggedUser?: string;
@@ -47,6 +48,11 @@ export default () => {
                 <Stack.Screen name="Home" component={Home} />
               </>
             )}
+            <Stack.Screen
+              name="Confirmation"
+              component={Confirmation}
+              options={{ headerShown: true }}
+            />
           </>
         ) : (
           <>
@@ -61,10 +67,7 @@ export default () => {
               component={ForgotPassword}
               options={{ headerShown: true }}
             />
-            <Stack.Screen
-              name="Loading"
-              component={Loading}
-            />
+            <Stack.Screen name="Loading" component={Loading} />
           </>
         )}
       </Stack.Navigator>
