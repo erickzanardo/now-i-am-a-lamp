@@ -15,18 +15,10 @@ const Login = ({ navigation }: Props) => {
   const dispatch = useDispatch();
 
   const onLogin = (email: string, password: string) => {
-    return (
-      dispatch(authenticate(email, password))
-        //@ts-ignore TODO fix TypeScript error here
-        .then(() => {
-          console.log('Logged');
-        })
-        .catch(() => {
-          console.log('Nope');
-        })
-    );
+    return dispatch(authenticate(email, password));
   };
 
+  //@ts-ignore TODO fix TypeScript error here
   return <LoginScreen navigation={navigation} onLogin={onLogin} />;
 };
 

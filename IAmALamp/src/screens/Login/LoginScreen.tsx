@@ -44,7 +44,15 @@ const LoginScreen = ({ navigation, onLogin }: Props) => {
         </View>
         <View style={styles.loginButton}>
           <Button
-            onPress={() => onLogin(email, password)}
+            onPress={() => {
+              onLogin(email, password)
+                .then(() => {
+                  console.log('Logged');
+                })
+                .catch(() => {
+                  console.log('Nope');
+                });
+            }}
             label="Login"
             width={300}
           />
