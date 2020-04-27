@@ -3,17 +3,24 @@ import { View, Image, Text } from 'react-native';
 
 import BackgroundView from '../../components/BackgroundView';
 import PrimaryButton from '../../components/PrimaryButton';
+import SecondaryButton from '../../components/SecondaryButton';
+import Link from '../../components/Link';
+import { RefreshImageIcon } from '../../components/Icon';
+import { HeartIcon } from '../../components/Icon';
 
 import styles from './styles';
-import { HeartIcon } from '../../components/Icon';
-import SecondaryButton from '../../components/SecondaryButton';
 
 const Register = () => {
   return (
     <BackgroundView customStyle={styles.bodyWrapper}>
       <View style={styles.body}>
-        <View style={styles.objectImage} />
-
+        <View style={styles.objectImage}>
+          <View style={styles.refreshImage}>
+            <Link onPress={() => {}}>
+              <RefreshImageIcon />
+            </Link>
+          </View>
+        </View>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>
             Yeah! You’re a<Text style={styles.titleObjectText}> Shoe </Text>now
