@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Image, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 
@@ -12,11 +12,27 @@ import styles from './styles';
 import lampLogo from '../../../assets/images/lamp-logo.png';
 import { NavigationProp } from '@react-navigation/native';
 
+import { authenticate } from '../../actions/authenticate';
+
 interface Props {
   navigation: NavigationProp<any>;
 }
 const Login = ({ navigation }: Props) => {
   const dispatch = useDispatch();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onLogin = () => {
+    dispatch(authenticate(email, password))
+      //@ts-ignore TODO fix TypeScript error here
+      .then(() => {
+        console.log('Logged');
+      })
+      .catch(() => {
+        console.log('Nope');
+      });
+  };
 
   return (
     <BackgroundView customStyle={styles.bodyWrapper}>
@@ -25,30 +41,24 @@ const Login = ({ navigation }: Props) => {
         <View style={styles.inputs}>
           <InputText
             label="Email"
-            onChangeText={() => {}}
+            onChangeText={(text) => {
+              setEmail(text);
+            }}
             placeholder="example@email.com"
             icon={<MailIcon />}
           />
           <View style={styles.spacer} />
           <InputText
             label="Password"
-            onChangeText={() => {}}
+            onChangeText={(text) => {
+              setPassword(text);
+            }}
             placeholder="Your Password Here"
             icon={<PasswordIcon />}
           />
         </View>
         <View style={styles.loginButton}>
-          <Button
-            onPress={() => {
-              // TODO this should be somehwere else when we integrate everything
-              dispatch({
-                type: 'USER_LOGGED_IN',
-                payload: { userEmail: 'jacksparrow@pirate.com' },
-              });
-            }}
-            label="Login"
-            width={300}
-          />
+          <Button onPress={onLogin} label="Login" width={300} />
           <Link onPress={() => navigation.navigate('ForgotPassword')}>
             <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
           </Link>
