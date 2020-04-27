@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 
 import Link from '../Link';
 import { BackIcon } from '../Icon';
@@ -11,11 +11,15 @@ interface Props {
 }
 const Navbar = ({ onBackPress }: Props) => {
   return (
-    <View style={styles.navbar}>
-      <Link onPress={onBackPress}>
-        <BackIcon />
-      </Link>
-    </View>
+    <>
+      <View style={styles.container} />
+      <SafeAreaView style={styles.container} />
+      <View style={styles.navbar}>
+        <Link onPress={onBackPress}>
+          <BackIcon />
+        </Link>
+      </View>
+    </>
   );
 };
 
