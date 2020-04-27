@@ -12,14 +12,14 @@ interface IListProps {
     titleStyle?: TextStyle;
 }
 
-export default class List extends React.Component <IListProps, {}> {
+export default class List extends React.Component<IListProps, {}> {
     public static Item = ListItem;
-	public static Icon = (props: IListIconProps) => <ListIcon {...props} />;
+    public static Icon = (props: IListIconProps) => <ListIcon {...props} />;
 
     render() {
         const {
             children,
-            horizontal=false,
+            horizontal = false,
             style,
             title,
             titleStyle,
