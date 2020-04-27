@@ -1,14 +1,14 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import aboutIcon from './about-icon.png';
-import addIcon from './add-icon.png';
+import aboutIcon from '../../../assets/images/about-icon.png';
+import addIcon from '../../../assets/images/add-icon.png';
 import backIcon from '../../../assets/images/back-icon.png';
 import heartIcon from '../../../assets/images/white-heart.png';
 import mainIcon from '../../../assets/images/mail-icon.png';
 import passwordIcon from '../../../assets/images/password-icon.png';
-import signOutIcon from './signOutIcon.png';
-import tagIcon from './tag-icon.png';
+import signOutIcon from '../../../assets/images/signout-icon.png';
+import tagIcon from '../../../assets/images/tag-icon.png';
 import userIcon from '../../../assets/images/user-icon.png';
 
 export const AboutIcon = () => <Image source={aboutIcon} />;
