@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, TextStyle, ViewStyle } from 'react-native';
 import { styles } from './style';
-import { ListIcon, IListIconProps } from './components/ListIcon';
-import { ListItem } from './components/ListItem';
+import { ListItem } from './ListItem';
 
 interface IListProps {
     children: JSX.Element | JSX.Element[];
@@ -14,7 +13,6 @@ interface IListProps {
 
 export default class List extends React.Component<IListProps, {}> {
     public static Item = ListItem;
-    public static Icon = (props: IListIconProps) => <ListIcon {...props} />;
 
     render() {
         const {
