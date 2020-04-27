@@ -9,6 +9,6 @@ export default StyleSheet.create({
     backgroundColor: theme.colors.primary,
     height: 64,
     justifyContent: 'center',
-    paddingLeft: 20,
+    paddingLeft: 15,
   },
 });
