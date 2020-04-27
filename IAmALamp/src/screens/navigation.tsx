@@ -10,6 +10,7 @@ import Register from './Register';
 import Selection from './Selection';
 import Navbar from '../components/Navbar';
 import ForgotPassword from './ForgotPassword';
+import Confirmation from './Confirmation';
 
 interface Props {
   loggedUser?: string;
@@ -46,6 +47,11 @@ export default () => {
                 <Stack.Screen name="Home" component={Home} />
               </>
             )}
+            <Stack.Screen
+              name="Confirmation"
+              component={Confirmation}
+              options={{ headerShown: true }}
+            />
           </>
         ) : (
           <>

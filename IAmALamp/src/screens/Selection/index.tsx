@@ -8,8 +8,13 @@ import InputText from '../../components/InputText';
 
 import styles from './styles';
 import lamp from '../../../assets/images/lamp.png';
+import { NavigationProp } from '@react-navigation/native';
 
-export default () => {
+interface Props {
+  navigation: NavigationProp<any>;
+}
+
+export default ({ navigation }: Props) => {
   return (
     <BackgroundView>
       <View style={styles.container}>
@@ -20,7 +25,11 @@ export default () => {
           onChangeText={(text) => {}}
         />
         <View style={styles.spacer} />
-        <PrimaryButton onPress={() => {}} label="CONTINUE" width={300} />
+        <PrimaryButton
+          onPress={() => navigation.navigate('Confirmation')}
+          label="Continue"
+          width={300}
+        />
       </View>
     </BackgroundView>
   );
