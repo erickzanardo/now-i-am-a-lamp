@@ -9,7 +9,7 @@ import PrimaryButton from '../../components/PrimaryButton';
 import styles from './styles';
 import forgotPasswordLogo from '../../../assets/images/forgot-password-logo.png';
 
-const Register = () => {
+const ForgotPassword = () => {
   return (
     <BackgroundView customStyle={styles.bodyWrapper}>
       <View style={styles.body}>
@@ -21,7 +21,7 @@ const Register = () => {
 
         <Text style={styles.titleText}>Did someone forget their password?</Text>
         <Text style={styles.subTitleText}>
-          That’s ok =]. Just ententer the email address ou’ve used to register
+          That’s ok =]. Just ententer the email address you’ve used to register
         </Text>
 
         <InputText
@@ -38,4 +38,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default ForgotPassword;

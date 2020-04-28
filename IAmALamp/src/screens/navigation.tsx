@@ -10,6 +10,7 @@ import Register from './Register';
 import Selection from './Selection';
 import Navbar from '../components/Navbar';
 import ForgotPassword from './ForgotPassword';
+import Loading from './Loading';
 
 interface Props {
   loggedUser?: string;
@@ -49,6 +50,10 @@ export default () => {
           </>
         ) : (
           <>
+            <Stack.Screen
+              name="Loading"
+              component={Loading}
+            />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen
               name="Register"
