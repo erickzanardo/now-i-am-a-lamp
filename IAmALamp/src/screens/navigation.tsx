@@ -50,10 +50,6 @@ export default () => {
           </>
         ) : (
           <>
-            <Stack.Screen
-              name="Loading"
-              component={Loading}
-            />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen
               name="Register"
@@ -64,6 +60,10 @@ export default () => {
               name="ForgotPassword"
               component={ForgotPassword}
               options={{ headerShown: true }}
+            />
+            <Stack.Screen
+              name="Loading"
+              component={Loading}
             />
           </>
         )}
