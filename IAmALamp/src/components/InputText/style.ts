@@ -7,6 +7,7 @@ export default StyleSheet.create({
     fontSize: 16,
     width: '100%',
     marginLeft: 15,
+    color: theme.colors.black,
   },
   label: {
     fontFamily: 'Roboto',

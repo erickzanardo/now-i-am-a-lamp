@@ -10,9 +10,17 @@ interface Props {
   placeholder: string;
   label?: string;
   icon?: Element;
+  isSecure?: boolean;
 }
 
-export default ({ value, onChangeText, placeholder, label, icon }: Props) => (
+export default ({
+  value,
+  onChangeText,
+  placeholder,
+  label,
+  icon,
+  isSecure,
+}: Props) => (
   <View style={styles.container}>
     <Text style={styles.label}>{label}</Text>
     <View style={styles.wrapper}>
@@ -23,6 +31,7 @@ export default ({ value, onChangeText, placeholder, label, icon }: Props) => (
         onChangeText={(text) => onChangeText(text)}
         placeholder={placeholder}
         placeholderTextColor={theme.colors.gray}
+        secureTextEntry={isSecure}
       />
     </View>
   </View>
