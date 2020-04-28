@@ -10,6 +10,7 @@ import Register from './Register';
 import Selection from './Selection';
 import Navbar from '../components/Navbar';
 import ForgotPassword from './ForgotPassword';
+import Loading from './Loading';
 
 interface Props {
   loggedUser?: string;
@@ -59,6 +60,10 @@ export default () => {
               name="ForgotPassword"
               component={ForgotPassword}
               options={{ headerShown: true }}
+            />
+            <Stack.Screen
+              name="Loading"
+              component={Loading}
             />
           </>
         )}

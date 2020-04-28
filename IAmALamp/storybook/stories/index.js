@@ -17,6 +17,7 @@ import BackgroundView from '../../src/components/BackgroundView';
 import Navbar from '../../src/components/Navbar';
 import List from '../../src/components/List';
 import theme from '../../src/components/theme';
+import { LampLoading } from '../../src/components/LampLoading';
 import ErrorView from '../../src/components/ErrorView';
 
 storiesOf('Button', module)
@@ -124,4 +125,10 @@ storiesOf('List', module)
         <List.Item {...{ ...listItemHorizontal, title: 'Beware of Darkness' }} />
     </List>
   ));
+
+storiesOf('Loading', module)
+  .add('Loading', () => (
+    <LampLoading />
+));
+
 storiesOf('ErrorView', module).add('error', () => <ErrorView label="Ops" />);
