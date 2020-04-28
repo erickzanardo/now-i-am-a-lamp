@@ -11,6 +11,7 @@ import Selection from './Selection';
 import Navbar from '../components/Navbar';
 import ForgotPassword from './ForgotPassword';
 import Loading from './Loading';
+import Tag from './Tag';
 
 interface Props {
   loggedUser?: string;
@@ -50,6 +51,7 @@ export default () => {
           </>
         ) : (
           <>
+            <Stack.Screen name="Tag" component={Tag} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen
               name="Register"
