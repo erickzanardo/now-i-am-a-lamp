@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
+import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
 import PrimaryButton from '../../src/components/PrimaryButton';
@@ -14,6 +15,7 @@ import { MailIcon, HeartIcon } from '../../src/components/Icon';
 import BackgroundView from '../../src/components/BackgroundView';
 import Navbar from '../../src/components/Navbar';
 import { LampLoading } from '../../src/components/LampLoading';
+import ErrorView from '../../src/components/ErrorView';
 
 storiesOf('Button', module)
   .add('primary button', () => <PrimaryButton label="Label" />)
@@ -78,3 +80,5 @@ storiesOf('Loading', module)
   .add('Loading', () => (
     <LampLoading />
 ));
+
+storiesOf('ErrorView', module).add('error', () => <ErrorView label="Ops" />);
