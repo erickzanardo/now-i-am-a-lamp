@@ -1,6 +1,7 @@
 const _mockerUsers = [
   { email: 'jacksparrow@pirate.com', password: 'rum' },
   { email: 'bond@mi6.com', password: 'martini' },
+  { email: 'Email', password: '123' },
 ];
 
 export const authenticate = (
