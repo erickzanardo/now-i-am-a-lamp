@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9bf4f742171955a36d7e0030c95f3abb188b5bd7
 import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
@@ -17,6 +21,7 @@ import BackgroundView from '../../src/components/BackgroundView';
 import Navbar from '../../src/components/Navbar';
 import List from '../../src/components/List';
 import theme from '../../src/components/theme';
+import ErrorView from '../../src/components/ErrorView';
 
 storiesOf('Button', module)
   .add('primary button', () => <PrimaryButton label="Label" />)
@@ -123,3 +128,4 @@ storiesOf('List', module)
         <List.Item {...{ ...listItemHorizontal, title: 'Beware of Darkness' }} />
     </List>
   ));
+storiesOf('ErrorView', module).add('error', () => <ErrorView label="Ops" />);
