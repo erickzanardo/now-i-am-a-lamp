@@ -48,7 +48,6 @@ const Tag = () => {
                         onChangeText={setNewTag}
                         value={newTag}
                         placeholder="Example: Brown, Proud, Old, Strinky, etc"
-                        autoCapitalize="none"
                         autoCorrect={false}
                         onSubmitEditing={addNewTag}
                     />

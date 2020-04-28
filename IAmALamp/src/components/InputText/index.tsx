@@ -10,22 +10,21 @@ interface Props {
   placeholder: string;
   label?: string;
   icon?: Element;
+  isSecure?: boolean;
   autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
   autoCorrect?: boolean;
-  maxLength?: number;
-  secureTextEntry?: boolean;
   onSubmitEditing?: () => void;
 }
 
-export default ({ 
+export default ({
   value,
   onChangeText,
   placeholder,
   label,
   icon,
+  isSecure,
   autoCapitalize,
-  maxLength,
-  secureTextEntry,
+  autoCorrect,
   onSubmitEditing,
 }: Props) => (
   <View style={styles.container}>
@@ -38,9 +37,9 @@ export default ({
         onChangeText={(text) => onChangeText(text)}
         placeholder={placeholder}
         placeholderTextColor={theme.colors.gray}
+        secureTextEntry={isSecure}
         autoCapitalize={autoCapitalize}
-        maxLength={maxLength}
-        secureTextEntry={secureTextEntry}
+        autoCorrect={autoCorrect}
         onSubmitEditing={onSubmitEditing}
       />
     </View>

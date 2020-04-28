@@ -38,6 +38,7 @@ const LoginScreen = ({ navigation, onLogin }: Props) => {
             onChangeText={(text) => {
               setPassword(text);
             }}
+            isSecure
             placeholder="Your Password Here"
             icon={<PasswordIcon />}
           />

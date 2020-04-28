@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { View, Text, Image } from 'react-native';
 
@@ -8,8 +8,15 @@ import InputText from '../../components/InputText';
 
 import styles from './styles';
 import lamp from '../../../assets/images/lamp.png';
+import { NavigationProp } from '@react-navigation/native';
 
-export default () => {
+interface Props {
+  navigation: NavigationProp<any>;
+}
+
+export default ({ navigation }: Props) => {
+  const [objectText, setObjectText] = useState('');
+
   return (
     <BackgroundView>
       <View style={styles.container}>
@@ -17,10 +24,18 @@ export default () => {
         <Text style={styles.text}>Now, I'am a(n):</Text>
         <InputText
           placeholder="Example: Teapot, Shoe, Car, Dog, etc..."
-          onChangeText={(text) => {}}
+          onChangeText={(text) => setObjectText(text)}
         />
         <View style={styles.spacer} />
-        <PrimaryButton onPress={() => {}} label="CONTINUE" width={300} />
+        <PrimaryButton
+          onPress={() =>
+            navigation.navigate('Confirmation', {
+              objectText,
+            })
+          }
+          label="Continue"
+          width={300}
+        />
       </View>
     </BackgroundView>
   );
