@@ -63,3 +63,7 @@ buck-out/
 /ios/Pods/
 
 .env
+
+# Firebase configs
+android/app/google-services.json
+ios/GoogleService-Info.plist
