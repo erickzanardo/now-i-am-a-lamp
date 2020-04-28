@@ -13,8 +13,10 @@ interface SearchResult {
   ];
 }
 export const search = (text: string, page: number) => {
+  const key = UNSPLASH_KEY;
+
   return fetch(
-    `https://api.unsplash.com/search/photos?page=${page}&query=${text}&client_id=${UNSPLASH_KEY}&per_page=${PER_PAGE}`,
+    `https://api.unsplash.com/search/photos?page=${page}&query=${text}&client_id=${key}&per_page=${PER_PAGE}`,
   )
     .then((res) => res.json())
     .then((response: SearchResult) =>
