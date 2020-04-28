@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { View, Text, Image } from 'react-native';
 
@@ -15,6 +15,8 @@ interface Props {
 }
 
 export default ({ navigation }: Props) => {
+  const [objectText, setObjectText] = useState('');
+
   return (
     <BackgroundView>
       <View style={styles.container}>
@@ -22,11 +24,15 @@ export default ({ navigation }: Props) => {
         <Text style={styles.text}>Now, I'am a(n):</Text>
         <InputText
           placeholder="Example: Teapot, Shoe, Car, Dog, etc..."
-          onChangeText={(text) => {}}
+          onChangeText={(text) => setObjectText(text)}
         />
         <View style={styles.spacer} />
         <PrimaryButton
-          onPress={() => navigation.navigate('Confirmation')}
+          onPress={() =>
+            navigation.navigate('Confirmation', {
+              objectText,
+            })
+          }
           label="Continue"
           width={300}
         />

@@ -9,10 +9,6 @@ export default StyleSheet.create({
   objectImage: {
     alignItems: 'flex-end',
     marginTop: 20,
-    borderRadius: 30,
-    backgroundColor: '#ff0000',
-    height: 196,
-    width: 244,
     justifyContent: 'flex-end',
   },
   body: {
@@ -65,6 +61,11 @@ export default StyleSheet.create({
   },
   refreshImage: {
     right: -25,
-    bottom: -20,
+    bottom: 40,
+  },
+  image: {
+    height: 196,
+    width: 244,
+    borderRadius: 30,
   },
 });
