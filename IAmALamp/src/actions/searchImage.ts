@@ -1,5 +1,7 @@
+//@ts-ignore
+import { UNSPLASH_KEY } from 'react-native-dotenv';
+
 const PER_PAGE = 5;
-const client_id = '';
 
 interface SearchResult {
   results: [
@@ -11,8 +13,9 @@ interface SearchResult {
   ];
 }
 export const search = (text: string, page: number) => {
+  console.log(UNSPLASH_KEY);
   return fetch(
-    `https://api.unsplash.com/search/photos?page=${page}&query=${text}&client_id=${client_id}&per_page=${PER_PAGE}`,
+    `https://api.unsplash.com/search/photos?page=${page}&query=${text}&client_id=${UNSPLASH_KEY}&per_page=${PER_PAGE}`,
   )
     .then((res) => res.json())
     .then((response: SearchResult) =>
