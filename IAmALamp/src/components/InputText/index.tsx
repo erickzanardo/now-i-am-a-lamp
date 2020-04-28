@@ -14,6 +14,7 @@ interface Props {
   autoCorrect?: boolean;
   maxLength?: number;
   secureTextEntry?: boolean;
+  onSubmitEditing?: () => void;
 }
 
 export default ({ 
@@ -25,6 +26,7 @@ export default ({
   autoCapitalize,
   maxLength,
   secureTextEntry,
+  onSubmitEditing,
 }: Props) => (
   <View style={styles.container}>
     <Text style={styles.label}>{label}</Text>
@@ -39,6 +41,7 @@ export default ({
         autoCapitalize={autoCapitalize}
         maxLength={maxLength}
         secureTextEntry={secureTextEntry}
+        onSubmitEditing={onSubmitEditing}
       />
     </View>
   </View>
