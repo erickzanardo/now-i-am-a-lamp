@@ -3,6 +3,7 @@ import { Image } from 'react-native';
 
 import aboutIcon from '../../../assets/images/about-icon.png';
 import addIcon from '../../../assets/images/add-icon.png';
+import addIconColor from '../../../assets/images/add-icon-color.png';
 import backIcon from '../../../assets/images/back-icon.png';
 import heartIcon from '../../../assets/images/white-heart.png';
 import mainIcon from '../../../assets/images/mail-icon.png';
@@ -15,6 +16,8 @@ import refreshImageIcon from '../../../assets/images/refresh-image-icon.png';
 export const AboutIcon = () => <Image source={aboutIcon} />;
 
 export const AddIcon = () => <Image source={addIcon} />;
+
+export const AddIconColor = () => <Image source={addIconColor} />;
 
 export const BackIcon = () => <Image source={backIcon} />;
 

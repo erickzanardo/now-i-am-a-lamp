@@ -33,7 +33,7 @@ export const ListItem = ({
 		{...{ onPress, activeOpacity: onPress ? 0.2 : 1 }}>
 		<View style={[styles.container, style]}>
 			<View style={[styles.leftStyle, leftStyle]}>{left}</View>
-			<Text style={[titleStyle]}>{title}</Text>
+			<Text style={[styles.titleStyle, titleStyle]}>{title}</Text>
 			<View style={[styles.rightStyle, rightStyle]}>{right}</View>
 		</View>
 	</TouchableOpacity>

@@ -31,6 +31,7 @@ export default class List extends React.Component<IListProps, {}> {
                 <View style={style}>
                     <FlatList
                         horizontal={horizontal}
+                        showsHorizontalScrollIndicator= {false}
                         data={items}
                         renderItem={({ item }) => <>{item}</>}
                         keyExtractor={(_, index) => index.toString()}

@@ -11,6 +11,7 @@ import Selection from './Selection';
 import Navbar from '../components/Navbar';
 import ForgotPassword from './ForgotPassword';
 import Loading from './Loading';
+import Tag from './Tag';
 import Confirmation from './Confirmation';
 
 interface Props {
@@ -41,6 +42,7 @@ export default () => {
               <>
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Selection" component={Selection} />
+                <Stack.Screen name="Tag" component={Tag} />
               </>
             ) : (
               <>
