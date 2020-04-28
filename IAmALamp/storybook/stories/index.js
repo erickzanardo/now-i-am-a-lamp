@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
@@ -13,6 +12,7 @@ import { MailIcon, HeartIcon } from '../../src/components/Icon';
 
 import BackgroundView from '../../src/components/BackgroundView';
 import Navbar from '../../src/components/Navbar';
+import { LampLoading } from '../../src/components/LampLoading';
 import ErrorView from '../../src/components/ErrorView';
 
 storiesOf('Button', module)
@@ -72,6 +72,11 @@ storiesOf('Link', module).add('link', () => (
   <Link onPress={() => {}}>
     <Text>My link</Text>
   </Link>
+));
+
+storiesOf('Loading', module)
+  .add('Loading', () => (
+    <LampLoading />
 ));
 
 storiesOf('ErrorView', module).add('error', () => <ErrorView label="Ops" />);
