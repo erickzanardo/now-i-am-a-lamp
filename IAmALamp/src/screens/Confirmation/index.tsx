@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Route } from '@react-navigation/native';
 
 import Confirmation from './Confirmation';
@@ -10,8 +9,6 @@ interface Props {
 }
 
 const ConfirmationContainer = ({ route }: Props) => {
-  const dispatch = useDispatch();
-
   //@ts-ignore
   const { objectText } = route.params;
 
