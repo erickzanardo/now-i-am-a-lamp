@@ -13,7 +13,6 @@ interface SearchResult {
   ];
 }
 export const search = (text: string, page: number) => {
-  console.log(UNSPLASH_KEY);
   return fetch(
     `https://api.unsplash.com/search/photos?page=${page}&query=${text}&client_id=${UNSPLASH_KEY}&per_page=${PER_PAGE}`,
   )
