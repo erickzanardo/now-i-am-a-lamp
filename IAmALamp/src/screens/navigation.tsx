@@ -43,7 +43,6 @@ export default () => {
               <>
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Selection" component={Selection} />
-                <Stack.Screen name="Tag" component={Tag} />
               </>
             ) : (
               <>
@@ -51,19 +50,20 @@ export default () => {
                 <Stack.Screen name="Home" component={Home} />
               </>
             )}
+            <Stack.Screen name="Tag" component={Tag} />
             <Stack.Screen
               name="Confirmation"
               component={Confirmation}
               options={{ headerShown: true }}
             />
-          </>
-        ) : (
-          <>
             <Stack.Screen
               name="Feed"
               component={Feed}
               options={{ headerShown: true }}
             />
+          </>
+        ) : (
+          <>
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen
               name="Register"

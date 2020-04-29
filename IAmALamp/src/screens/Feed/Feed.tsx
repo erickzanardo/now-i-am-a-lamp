@@ -11,38 +11,36 @@ interface Props {
   object: string;
   days: number;
   avatarUrl: string;
-  expireDate: string;
-  message: string;
   tags: Array<string>;
+  messages: any[];
 }
 
-const Feed = ({
-  object,
-  days,
-  avatarUrl,
-  expireDate,
-  message,
-  tags,
-}: Props) => {
+const Feed = ({ object, days, avatarUrl, messages, tags }: Props) => {
   return (
     <BackgroundView>
       <AvatarHeader
-        label={`${object.toUpperCase()} | ${days} Days}`}
+        label={`${object.toUpperCase()} | ${days} Days`}
         avatarUrl={avatarUrl}></AvatarHeader>
       <View style={styles.tagList}>
         <List horizontal={true} style={{ height: 30 }}>
           {tags.map((tag) => (
-            <List.Item titleStyle={styles.tagTitleStyle} left={<TagIcon />} title={tag} />
+            <List.Item
+              titleStyle={styles.tagTitleStyle}
+              left={<TagIcon />}
+              title={tag}
+            />
           ))}
         </List>
       </View>
       <View style={styles.feed}>
-        <FeedItem
-          imageUrl={avatarUrl}
-          object={object}
-          expireDate={expireDate}
-          message={message}
-        />
+        {messages.map((message) => (
+          <FeedItem
+            imageUrl={message.avatarUrl}
+            object={message.thing}
+            expireDate={message.expireDate}
+            message={message.message}
+          />
+        ))}
       </View>
     </BackgroundView>
   );

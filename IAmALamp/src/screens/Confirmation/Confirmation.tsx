@@ -13,9 +13,10 @@ import styles from './styles';
 interface Props {
   fetchImages: (text: string, pageNumber: number) => Promise<any>;
   objectText: string;
+  confirm: (thing: string, imageUrl: string) => void;
 }
 
-const Confirmation = ({ fetchImages, objectText }: Props) => {
+const Confirmation = ({ fetchImages, objectText, confirm }: Props) => {
   const [imageIndex, setImageIndex] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
   const [imageUrl, setImageUrl] = useState('');
@@ -86,7 +87,7 @@ const Confirmation = ({ fetchImages, objectText }: Props) => {
       <View style={styles.buttonsContainer}>
         <PrimaryButton
           width={165}
-          onPress={() => {}}
+          onPress={() => confirm(objectText, imageUrl)}
           label="Yes!!!"
           icon={<HeartIcon />}
         />

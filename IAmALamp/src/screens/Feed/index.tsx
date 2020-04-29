@@ -1,15 +1,33 @@
 import React from 'react';
 import Feed from './Feed';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../reducers';
 
 const FeedContainer = () => {
+  const thing = useSelector((state: RootState) => state.user.thing);
+
+  const messages = [
+    {
+      thing: 'Glasses',
+      message: 'Red glasses to see better',
+      avatarUrl:
+        'https://cdn5.colorir.com/desenhos/color/201627/oculos-modernos-moda-pintado-por-jujutop-1271473.jpg',
+      expireDate: '3 days to say good bye',
+    },
+    {
+      thing: 'Lamp',
+      message: 'What?!',
+      avatarUrl: 'https://cdn5.colorir.com/desenhos/pintar/abajur.png',
+      expireDate: '1 day to say good bye',
+    },
+  ];
   return (
     <Feed
-      object="Shoe"
+      object={thing!.name}
       days={2}
-      message="418"
-      expireDate="3 days to say good bye"
-      avatarUrl="https://s2.glbimg.com/hzJUjecqvH_F_eIdyaUvdEZlZ9k=/0x0:976x549/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/x/6/d7OX4gSbmIPOBJA5vYpw/cat.jpg"
-      tags={['House', 'Car', 'Ship']}
+      avatarUrl={thing!.imageUrl}
+      tags={thing!.tags}
+      messages={messages}
     />
   );
 };
