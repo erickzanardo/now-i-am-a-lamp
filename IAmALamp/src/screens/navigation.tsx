@@ -13,6 +13,8 @@ import ForgotPassword from './ForgotPassword';
 import Loading from './Loading';
 import Confirmation from './Confirmation';
 
+import BottomTab from '../components/BottomBar';
+
 interface Props {
   loggedUser?: string;
   thing?: string;
@@ -43,11 +45,11 @@ export default () => {
                 <Stack.Screen name="Selection" component={Selection} />
               </>
             ) : (
-              <>
-                <Stack.Screen name="Selection" component={Selection} />
-                <Stack.Screen name="Home" component={Home} />
-              </>
-            )}
+                <>
+                  <Stack.Screen name="Selection" component={Selection} />
+                  <Stack.Screen name="Home" component={Home} />
+                </>
+              )}
             <Stack.Screen
               name="Confirmation"
               component={Confirmation}
@@ -55,21 +57,21 @@ export default () => {
             />
           </>
         ) : (
-          <>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen
-              name="Register"
-              component={Register}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="ForgotPassword"
-              component={ForgotPassword}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen name="Loading" component={Loading} />
-          </>
-        )}
+            <>
+              <Stack.Screen name="Login" component={BottomTab} />
+              <Stack.Screen
+                name="Register"
+                component={Register}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="ForgotPassword"
+                component={ForgotPassword}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen name="Loading" component={Loading} />
+            </>
+          )}
       </Stack.Navigator>
     </NavigationContainer>
   );
