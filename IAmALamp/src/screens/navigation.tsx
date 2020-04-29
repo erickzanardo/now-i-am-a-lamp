@@ -11,9 +11,9 @@ import Selection from './Selection';
 import Navbar from '../components/Navbar';
 import ForgotPassword from './ForgotPassword';
 import Loading from './Loading';
-import Tag from './Tag';
 import Confirmation from './Confirmation';
-import Feed from './Feed';
+import BottomTab from '../components/DrawerMenu';
+import Tag from './Tag';
 
 interface Props {
   loggedUser?: string;
@@ -58,7 +58,7 @@ export default () => {
             />
             <Stack.Screen
               name="Feed"
-              component={Feed}
+              component={BottomTab}
               options={{ headerShown: true }}
             />
           </>
