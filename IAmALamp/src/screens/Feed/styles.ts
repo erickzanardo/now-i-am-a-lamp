@@ -29,4 +29,13 @@ export default StyleSheet.create({
     fontSize: 14,
     marginTop: 10,
   },
+  tagList: {
+    marginTop: 18,
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  tagTitleStyle: {
+    marginHorizontal: 10,
+  },
 });
