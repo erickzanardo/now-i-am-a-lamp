@@ -12,7 +12,7 @@ interface Props {
 export default ({ label, avatarUrl }: Props) => (
   <View style={styles.container}>
     <View style={styles.wrapper}>
-      <Avatar image={avatarUrl} size={120} />
+      <Avatar image={avatarUrl} size={120} primary={true} />
       <Text style={styles.label}>{label}</Text>
     </View>
   </View>

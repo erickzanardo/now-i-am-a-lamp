@@ -11,6 +11,9 @@ interface Props {
   label?: string;
   icon?: Element;
   isSecure?: boolean;
+  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
+  autoCorrect?: boolean;
+  onSubmitEditing?: () => void;
 }
 
 export default ({
@@ -20,6 +23,9 @@ export default ({
   label,
   icon,
   isSecure,
+  autoCapitalize,
+  autoCorrect,
+  onSubmitEditing,
 }: Props) => (
   <View style={styles.container}>
     <Text style={styles.label}>{label}</Text>
@@ -32,6 +38,9 @@ export default ({
         placeholder={placeholder}
         placeholderTextColor={theme.colors.gray}
         secureTextEntry={isSecure}
+        autoCapitalize={autoCapitalize}
+        autoCorrect={autoCorrect}
+        onSubmitEditing={onSubmitEditing}
       />
     </View>
   </View>

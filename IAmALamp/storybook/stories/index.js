@@ -6,12 +6,17 @@ import PrimaryButton from '../../src/components/PrimaryButton';
 import SecondaryButton from '../../src/components/SecondaryButton';
 import Avatar from '../../src/components/Avatar';
 import Link from '../../src/components/Link';
-
 import InputText from '../../src/components/InputText';
-import { MailIcon, HeartIcon } from '../../src/components/Icon';
-
+import { 
+  MailIcon,
+  HeartIcon,
+  TagIcon,
+  AddIcon,
+} from '../../src/components/Icon';
 import BackgroundView from '../../src/components/BackgroundView';
 import Navbar from '../../src/components/Navbar';
+import List from '../../src/components/List';
+import theme from '../../src/components/theme';
 import { LampLoading } from '../../src/components/LampLoading';
 import ErrorView from '../../src/components/ErrorView';
 import AvatarHeader from '../../src/components/AvatarHeader';
@@ -75,7 +80,55 @@ storiesOf('Link', module).add('link', () => (
   </Link>
 ));
 
-storiesOf('Loading', module).add('Loading', () => <LampLoading />);
+const listItemVertical = {
+  left: <TagIcon />,
+  right: <AddIcon />,
+  style: {
+    borderBottomColor: theme.colors.gray,
+    borderBottomWidth: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 8,
+  },
+  titleStyle:{ marginHorizontal: 10 },
+  style: {
+    borderBottomColor: theme.colors.gray,
+    borderBottomWidth: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 8,
+  },
+};
+
+const listItemHorizontal = {
+  left: <TagIcon />,
+  titleStyle:{ marginHorizontal: 10 },
+  style: {
+    borderRightColor: theme.colors.gray,
+    borderRightWidth: 1,
+    paddingHorizontal: 8,
+  },
+};
+
+storiesOf('List', module)
+  .add('Vertical List', () => (
+    <List title="Shoes Top Tags" style={{ marginHorizontal: 18 }}>
+      <List.Item {...{ ...listItemVertical, title: 'Old Brown' }} />
+      <List.Item {...{ ...listItemVertical, title: 'Kick Ass' }} />
+      <List.Item {...{ ...listItemVertical, title: 'Stinky' }} />
+    </List>
+  ))
+  .add('Horizontal List', () => (
+    <List title="My Tags" horizontal={true} style={{ height: 30 }}>
+        <List.Item {...{ ...listItemHorizontal, title: 'Blue Jay Way' }} />
+        <List.Item {...{ ...listItemHorizontal, title: 'Only a Nothern Song' }} />
+        <List.Item {...{ ...listItemHorizontal, title: 'Id have you anytime ' }} />
+        <List.Item {...{ ...listItemHorizontal, title: 'My Sweet Lord' }} />
+        <List.Item {...{ ...listItemHorizontal, title: 'Isnt it a Pity' }} />
+        <List.Item {...{ ...listItemHorizontal, title: 'Beware of Darkness' }} />
+    </List>
+  ));
+
+storiesOf('Loading', module)
+  .add('Loading', () => <LampLoading />);
 
 storiesOf('AvatarHeader', module).add('header', () => (
   <AvatarHeader

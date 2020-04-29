@@ -44,4 +44,9 @@ export default StyleSheet.create({
     color: theme.colors.primary,
     marginLeft: 5,
   },
+  loadingWrapper: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

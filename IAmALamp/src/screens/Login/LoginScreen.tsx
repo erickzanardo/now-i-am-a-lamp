@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Image, Text } from 'react-native';
 
+import { LampLoading } from '../../components/LampLoading';
+import ErrorView from '../../components/ErrorView';
 import Button from '../../components/PrimaryButton';
 import BackgroundView from '../../components/BackgroundView';
 import InputText from '../../components/InputText';
@@ -18,6 +20,27 @@ interface Props {
 const LoginScreen = ({ navigation, onLogin }: Props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const login = () => {
+    setError(null);
+    setLoading(true);
+    onLogin(email, password)
+      .catch((e) => {
+        setError(e);
+      })
+      .then(() => setLoading(false));
+  };
+
+  if (loading) {
+    return (
+      <View style={styles.loadingWrapper}>
+        <LampLoading />
+      </View>
+    );
+  }
 
   return (
     <BackgroundView customStyle={styles.bodyWrapper}>
@@ -43,20 +66,9 @@ const LoginScreen = ({ navigation, onLogin }: Props) => {
             icon={<PasswordIcon />}
           />
         </View>
+        {error && <ErrorView label={error} />}
         <View style={styles.loginButton}>
-          <Button
-            onPress={() => {
-              onLogin(email, password)
-                .then(() => {
-                  console.log('Logged');
-                })
-                .catch(() => {
-                  console.log('Nope');
-                });
-            }}
-            label="Login"
-            width={300}
-          />
+          <Button onPress={login} label="Login" width={300} />
           <Link onPress={() => navigation.navigate('ForgotPassword')}>
             <Text style={styles.forgotPasswordLink}>Forgot Password?</Text>
           </Link>
