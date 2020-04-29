@@ -14,7 +14,6 @@ import Loading from './Loading';
 import Confirmation from './Confirmation';
 import BottomTab from '../components/DrawerMenu';
 import Tag from './Tag';
-import Feed from './Feed';
 
 interface Props {
   loggedUser?: string;
@@ -59,7 +58,7 @@ export default () => {
             />
             <Stack.Screen
               name="Feed"
-              component={Feed}
+              component={BottomTab}
               options={{ headerShown: true }}
             />
           </>

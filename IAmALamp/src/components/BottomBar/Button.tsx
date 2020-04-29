@@ -7,7 +7,7 @@ import Icons from './icons';
 
 type Props = {
   title: string;
-  iconName: 'home' | 'tags' | 'options';
+  iconName: 'feed' | 'tags' | 'options';
   isFocused?: boolean;
   onPress: () => void;
 };

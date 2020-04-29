@@ -8,8 +8,6 @@ import {
 } from '@react-navigation/drawer';
 import { NavigationProp } from '@react-navigation/native';
 
-import Home from '../../screens/Home';
-
 import Icons from './icons';
 import Content from './content';
 import logo from '../../../assets/images/lamp-logo.png';
@@ -17,6 +15,7 @@ import logo from '../../../assets/images/lamp-logo.png';
 import Bottom from '../BottomBar';
 
 import styles from './styles';
+import Feed from '../../screens/Feed';
 
 const CustomDrawerContent = (
   props: DrawerContentComponentProps<DrawerContentOptions>,
@@ -50,7 +49,7 @@ const DrawerNavigation = ({ navigation }: Props) => {
       <Drawer.Navigator
         drawerPosition="right"
         drawerContent={(props) => <CustomDrawerContent {...props} />}>
-        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Feed" component={Feed} />
       </Drawer.Navigator>
       <Bottom navigation={navigation} />
     </>

@@ -10,11 +10,20 @@ interface Props {
   navigation: NavigationProp<any>;
 }
 
-const Navigator = ({ navigation }: Props) => {
+const BottomBar = ({ navigation }: Props) => {
   return (
     <View style={[styles.container]}>
-      <Button title="Home" iconName="home" isFocused onPress={() => {}} />
-      <Button title="Tags" iconName="tags" onPress={() => {}} />
+      <Button
+        title="Feed"
+        iconName="feed"
+        isFocused
+        onPress={() => navigation.navigate('Feed')}
+      />
+      <Button
+        title="Tags"
+        iconName="tags"
+        onPress={() => navigation.navigate('Tags')}
+      />
       <Button
         title="Options"
         iconName="options"
@@ -24,4 +33,4 @@ const Navigator = ({ navigation }: Props) => {
   );
 };
 
-export default Navigator;
+export default BottomBar;
