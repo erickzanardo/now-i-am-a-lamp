@@ -6,12 +6,9 @@ import styles from './styles';
 interface Props {
   image: string;
   size: number;
-  primary?: boolean;
+  primary: boolean;
 }
 
-export default ({ image, size, primary }: Props) => (
-  <Image
-    style={styles(size, primary).image}
-    source={{ uri: image }}
-  />
+export default ({ image, size, primary = true }: Props) => (
+  <Image style={styles(size, primary).image} source={{ uri: image }} />
 );
