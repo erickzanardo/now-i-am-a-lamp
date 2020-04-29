@@ -1,75 +1,26 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { View } from "react-native";
 
-import { Image } from "react-native";
-import Home from "../../screens/Home";
-import Login from "../../screens/Login";
+import { NavigationProp, DrawerActions } from "@react-navigation/native";
 
-import Icons from "./icons";
 import styles from "./styles";
-import theme from "../theme";
+import Button from "./Button";
 
-enum Name {
-  Home = "home",
-  Tags = "tag",
-  Options = "options"
+interface Props {
+  navigation: NavigationProp<any>;
 }
 
-const Navigator = () => {
-  const Tab = createBottomTabNavigator();
-
+const Navigator = ({ navigation }: Props) => {
   return (
-    <Tab.Navigator
-      initialRouteName="Login"
-      tabBarOptions={{
-        activeTintColor: theme.colors.black,
-        inactiveTintColor: theme.colors.white,
-        style: styles.container
-      }}
-    >
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={() => ({
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={Icons["home"]}
-              style={{
-                tintColor: color
-              }}
-            />
-          )
-        })}
+    <View style={[styles.container]}>
+      <Button title="Home" iconName="home" isFocused onPress={() => {}} />
+      <Button title="Tags" iconName="tags" onPress={() => {}} />
+      <Button
+        title="Options"
+        iconName="options"
+        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
       />
-      <Tab.Screen
-        name="Tags"
-        component={Login}
-        options={() => ({
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={Icons["tag"]}
-              style={{
-                tintColor: color
-              }}
-            />
-          )
-        })}
-      />
-      <Tab.Screen
-        name="Options"
-        component={Login}
-        options={() => ({
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={Icons["options"]}
-              style={{
-                tintColor: color
-              }}
-            />
-          )
-        })}
-      />
-    </Tab.Navigator>
+    </View>
   );
 };
 
