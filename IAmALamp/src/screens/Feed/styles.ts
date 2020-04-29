@@ -11,6 +11,7 @@ export default StyleSheet.create({
   feed: {
     backgroundColor: theme.colors.white,
     borderRadius: 12,
+    marginTop: 10,
   },
   object: {
     color: theme.colors.primary,
@@ -33,5 +34,14 @@ export default StyleSheet.create({
   title: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  tagList: {
+    marginTop: 18,
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  tagTitleStyle: {
+    marginHorizontal: 10,
   },
 });
