@@ -12,6 +12,7 @@ import signOutIcon from '../../../assets/images/signout-icon.png';
 import tagIcon from '../../../assets/images/tag-icon.png';
 import userIcon from '../../../assets/images/user-icon.png';
 import refreshImageIcon from '../../../assets/images/refresh-image-icon.png';
+import heartEmptyIcon from '../../../assets/images/heart-empty-icon.png';
 
 export const AboutIcon = () => <Image source={aboutIcon} />;
 
@@ -34,3 +35,5 @@ export const TagIcon = () => <Image source={tagIcon} />;
 export const UserIcon = () => <Image source={userIcon} />;
 
 export const RefreshImageIcon = () => <Image source={refreshImageIcon} />;
+
+export const HeartEmptyIcon = () => <Image source={heartEmptyIcon} />;

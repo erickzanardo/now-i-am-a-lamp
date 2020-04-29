@@ -13,6 +13,7 @@ import ForgotPassword from './ForgotPassword';
 import Loading from './Loading';
 import Tag from './Tag';
 import Confirmation from './Confirmation';
+import Feed from './Feed';
 
 interface Props {
   loggedUser?: string;
@@ -58,6 +59,11 @@ export default () => {
           </>
         ) : (
           <>
+            <Stack.Screen
+              name="Feed"
+              component={Feed}
+              options={{ headerShown: true }}
+            />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen
               name="Register"
