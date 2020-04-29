@@ -24,6 +24,9 @@ export default StyleSheet.create({
     tintColor: theme.colors.black,
     marginBottom: 10,
   },
+  button: {
+    alignItems: 'center',
+  },
   buttonTextBlack: {
     color: theme.colors.black,
   },

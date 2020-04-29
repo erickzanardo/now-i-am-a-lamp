@@ -14,7 +14,7 @@ type Props = {
 
 const BottomMenuItem = ({ title, iconName, isFocused, onPress }: Props) => {
   return (
-    <TouchableOpacity style={{ alignItems: 'center' }} onPress={onPress}>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
       <Image
         style={isFocused ? styles.imageDark : styles.image}
         source={Icons[iconName]}
