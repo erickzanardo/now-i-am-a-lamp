@@ -12,7 +12,7 @@ import Navbar from "../components/Navbar";
 import ForgotPassword from "./ForgotPassword";
 import Loading from "./Loading";
 import Confirmation from "./Confirmation";
-import BottomTab from "../components/MenuDrawer";
+import BottomTab from "../components/DrawerMenu";
 import Tag from "./Tag";
 import Feed from "./Feed";
 
