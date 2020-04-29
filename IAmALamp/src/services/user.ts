@@ -1,22 +1,39 @@
-const _mockerUsers = [
-  { email: 'jacksparrow@pirate.com', password: 'rum' },
-  { email: 'bond@mi6.com', password: 'martini' },
-  { email: 'Email', password: '123' },
-];
+import auth from '@react-native-firebase/auth';
+//@ts-ignore
+import md5 from 'md5';
 
 export const authenticate = (
   email: string,
   password: string,
 ): Promise<string> => {
-  for (let i = 0; i < _mockerUsers.length; i++) {
-    const u = _mockerUsers[i];
+  const hashPassword: string = md5(password);
 
-    if (u.email === email && u.password === password) {
-      return Promise.resolve(
-        'ThisIsAnAwesomeTokenUsedForAuthenticationsDonTTellAnyone',
-      );
-    }
-  }
+  return auth()
+    .signInWithEmailAndPassword(email, hashPassword)
+    .then((user) => user.user.uid);
+};
 
-  return Promise.reject();
+export const registerUser = (
+  email: string,
+  password: string,
+): Promise<string> => {
+  const hashPassword: string = md5(password);
+
+  return auth()
+    .createUserWithEmailAndPassword(email, hashPassword)
+    .then((user) => {
+      const id = user.user.uid;
+      return id;
+    })
+    .catch((error) => {
+      if (error.code === 'auth/email-already-in-use') {
+        throw 'That email address is already in use!';
+      }
+
+      if (error.code === 'auth/invalid-email') {
+        throw 'That email address is invalid!';
+      }
+
+      throw error;
+    });
 };

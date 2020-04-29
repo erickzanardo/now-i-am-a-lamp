@@ -176,6 +176,9 @@ PODS:
     - React-Core (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/turbomodule/core (= 0.62.2)
+  - Firebase/Auth (6.13.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 6.4.0)
   - Firebase/Core (6.13.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.1.6)
@@ -193,6 +196,12 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (= 0.3.9011)
+  - FirebaseAuth (6.4.2):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.2)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseAuthInterop (1.1.0)
   - FirebaseCore (6.4.0):
     - FirebaseCoreDiagnostics (~> 1.0)
@@ -324,6 +333,7 @@ PODS:
     - gRPC-Core/Interface (= 1.21.0)
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.21.0)
+  - GTMSessionFetcher/Core (1.3.1)
   - leveldb-library (1.22)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
@@ -569,6 +579,11 @@ PODS:
   - RNFBApp (6.7.1):
     - Firebase/Core (~> 6.13.0)
     - React
+  - RNFBAuth (6.7.1):
+    - Firebase/Auth (~> 6.13.0)
+    - Firebase/Core (~> 6.13.0)
+    - React
+    - RNFBApp
   - RNFBFirestore (6.7.1):
     - Firebase/Core (~> 6.13.0)
     - Firebase/Firestore (~> 6.13.0)
@@ -636,6 +651,7 @@ DEPENDENCIES:
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNDevMenu (from `../node_modules/react-native-dev-menu`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
+  - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -651,6 +667,7 @@ SPEC REPOS:
     - CocoaLibEvent
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -670,6 +687,7 @@ SPEC REPOS:
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
+    - GTMSessionFetcher
     - leveldb-library
     - nanopb
     - OpenSSL-Universal
@@ -735,6 +753,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-dev-menu"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
+  RNFBAuth:
+    :path: "../node_modules/@react-native-firebase/auth"
   RNFBFirestore:
     :path: "../node_modules/@react-native-firebase/firestore"
   RNGestureHandler:
@@ -757,6 +777,7 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 5465d51ccfeecb7faa12f9ae0024f2044ce4044e
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
+  FirebaseAuth: ce45d7c5d46bed90159f3a73b6efbe8976ed3573
   FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
   FirebaseCore: 307ea2508df730c5865334e41965bd9ea344b0e5
   FirebaseCoreDiagnostics: b59c024493a409f8aecba02c99928d0d8431d159
@@ -778,6 +799,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
+  GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
@@ -806,6 +828,7 @@ SPEC CHECKSUMS:
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNDevMenu: 7fcefaeb92d2ab1d7c73751e4e908d61f770e0e4
   RNFBApp: 7b539bb25520fa73d6a240f5c6ea569e27683645
+  RNFBAuth: c292603069a09065a1b4d3336148beff83e4c897
   RNFBFirestore: 23757ad7c33d81587a5d7d7d77f3ea22a1103372
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNReanimated: 955cf4068714003d2f1a6e2bae3fb1118f359aff
@@ -815,4 +838,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 121d7fc0f22d214e8f5579a8b084e0a89d1a708a
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
