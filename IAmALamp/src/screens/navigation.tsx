@@ -1,20 +1,20 @@
-import React from "react";
-import { RootState } from "../reducers";
-import { useSelector } from "react-redux";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import React from 'react';
+import { RootState } from '../reducers';
+import { useSelector } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from "./Home";
-import Login from "./Login";
-import Register from "./Register";
-import Selection from "./Selection";
-import Navbar from "../components/Navbar";
-import ForgotPassword from "./ForgotPassword";
-import Loading from "./Loading";
-import Confirmation from "./Confirmation";
-import BottomTab from "../components/DrawerMenu";
-import Tag from "./Tag";
-import Feed from "./Feed";
+import Home from './Home';
+import Login from './Login';
+import Register from './Register';
+import Selection from './Selection';
+import Navbar from '../components/Navbar';
+import ForgotPassword from './ForgotPassword';
+import Loading from './Loading';
+import Confirmation from './Confirmation';
+import BottomTab from '../components/DrawerMenu';
+import Tag from './Tag';
+import Feed from './Feed';
 
 interface Props {
   loggedUser?: string;
@@ -25,7 +25,7 @@ export default () => {
   const Stack = createStackNavigator();
 
   const { loggedUser, thing } = useSelector<RootState, Props>(
-    ({ user }) => user
+    ({ user }) => user,
   );
   return (
     <NavigationContainer>
@@ -36,9 +36,8 @@ export default () => {
             return (
               options.headerShown && <Navbar onBackPress={navigation.goBack} />
             );
-          }
-        }}
-      >
+          },
+        }}>
         {loggedUser ? (
           <>
             {thing ? (

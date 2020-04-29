@@ -1,10 +1,10 @@
-import React from "react";
-import { View } from "react-native";
+import React from 'react';
+import { View } from 'react-native';
 
-import { NavigationProp, DrawerActions } from "@react-navigation/native";
+import { NavigationProp, DrawerActions } from '@react-navigation/native';
 
-import styles from "./styles";
-import Button from "./Button";
+import styles from './styles';
+import Button from './Button';
 
 interface Props {
   navigation: NavigationProp<any>;

@@ -1,25 +1,25 @@
-import React from "react";
-import { View, TouchableOpacity, Text, Image } from "react-native";
+import React from 'react';
+import { View, TouchableOpacity, Text, Image } from 'react-native';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerContentComponentProps,
-  DrawerContentOptions
-} from "@react-navigation/drawer";
-import { NavigationProp } from "@react-navigation/native";
+  DrawerContentOptions,
+} from '@react-navigation/drawer';
+import { NavigationProp } from '@react-navigation/native';
 
-import Home from "../../screens/Home";
+import Home from '../../screens/Home';
 
-import Icons from "./icons";
-import Content from "./content";
-import logo from "../../../assets/images/lamp-logo.png";
+import Icons from './icons';
+import Content from './content';
+import logo from '../../../assets/images/lamp-logo.png';
 
-import Bottom from "../BottomBar";
+import Bottom from '../BottomBar';
 
-import styles from "./styles";
+import styles from './styles';
 
 const CustomDrawerContent = (
-  props: DrawerContentComponentProps<DrawerContentOptions>
+  props: DrawerContentComponentProps<DrawerContentOptions>,
 ) => {
   return (
     <DrawerContentScrollView {...props}>
@@ -28,12 +28,12 @@ const CustomDrawerContent = (
       </View>
       <View style={styles.drawerItemWrapper}>
         <TouchableOpacity style={styles.drawerItem} onPress={() => {}}>
-          <Image source={Icons["about"]} />
-          <Text style={styles.drawerItemText}>{Content["about"]}</Text>
+          <Image source={Icons.about} />
+          <Text style={styles.drawerItemText}>{Content.about}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.drawerItem} onPress={() => {}}>
-          <Image source={Icons["logout"]} />
-          <Text style={styles.drawerItemText}>{Content["logout"]}</Text>
+          <Image source={Icons.logout} />
+          <Text style={styles.drawerItemText}>{Content.logout}</Text>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
@@ -49,8 +49,7 @@ const DrawerNavigation = ({ navigation }: Props) => {
     <>
       <Drawer.Navigator
         drawerPosition="right"
-        drawerContent={props => <CustomDrawerContent {...props} />}
-      >
+        drawerContent={(props) => <CustomDrawerContent {...props} />}>
         <Drawer.Screen name="Home" component={Home} />
       </Drawer.Navigator>
       <Bottom navigation={navigation} />
