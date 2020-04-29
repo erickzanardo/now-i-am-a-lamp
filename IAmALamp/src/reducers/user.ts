@@ -12,11 +12,11 @@ export const UserReducer: Reducer<UserState> = (
   action,
 ) => {
   if (action.type === 'USER_LOGGED_IN') {
-    const { userEmail } = action.payload;
+    const { id } = action.payload;
 
     return {
       ...state,
-      loggedUser: userEmail,
+      loggedUser: id,
     };
   }
   return state;

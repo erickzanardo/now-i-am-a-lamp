@@ -1,7 +1,6 @@
-import { authenticate as service } from '../services/user';
+import { registerUser as service } from '../services/user';
 
-// TODO fix thunk types
-export const authenticate = (email: string, password: string) => (
+export const register = (email: string, password: string) => (
   dispatch: any,
 ) => {
   return service(email, password).then((id) => {
