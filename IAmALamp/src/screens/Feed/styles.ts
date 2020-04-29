@@ -21,12 +21,17 @@ export default StyleSheet.create({
     fontFamily: 'Roboto-Light',
     fontSize: 10,
   },
-  info: {
+  body: {
     marginLeft: 15,
+    flex: 1,
   },
   message: {
     fontFamily: 'Roboto-Light',
     fontSize: 14,
     marginTop: 10,
+  },
+  title: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
