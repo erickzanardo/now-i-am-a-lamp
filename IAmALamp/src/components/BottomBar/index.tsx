@@ -22,7 +22,7 @@ const BottomBar = ({ navigation }: Props) => {
       <Button
         title="Tags"
         iconName="tags"
-        onPress={() => navigation.navigate('Tags')}
+        onPress={() => navigation.navigate('Tag')}
       />
       <Button
         title="Options"

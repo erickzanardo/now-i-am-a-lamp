@@ -44,4 +44,17 @@ export default StyleSheet.create({
   tagTitleStyle: {
     marginHorizontal: 10,
   },
+  inputWrapper: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-evenly',
+  },
+  inputViewWrapper: {
+    flex: 0.9,
+  },
+  bodyFeed: {
+    justifyContent: 'space-between',
+    flex: 1,
+    paddingBottom: 100,
+  },
 });
